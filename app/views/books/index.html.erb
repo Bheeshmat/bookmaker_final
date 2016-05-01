@@ -1,0 +1,14 @@
+<%= link_to 'Create a book', new_book_path, class: "btn btn-success pull-right" %>
+<h1>Choose a book and contribute!</h1>
+<div class="container-fluid">
+  <% @books.each do |book| %>
+    <div class="row">
+      <div class="col-md-4 well">
+        <h3><%= link_to book.title, book_path(book) %></h3>
+        <p>
+          <%= book.notes %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

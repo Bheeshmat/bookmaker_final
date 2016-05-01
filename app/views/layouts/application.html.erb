@@ -8,8 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<%= render 'common/header' unless is_home_page %>
+<div class="<%= "container" unless is_home_page %>">
+  <%= flash_messages_tag %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
