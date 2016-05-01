@@ -1,0 +1,5 @@
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :notes, hint: "Please add a brief description about your book" %>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
+<% end %>
