@@ -1,0 +1,7 @@
+hn:
+  flash_messages:
+    books:
+      creation_success: "आपका पुस्तक बन गया!"
+      creation_failure: "आपका पुस्तक नहीं बना!"
+      deletion_success: "आपका पुस्तक डिलीट हुआ!"
+      deletion_failure: "आपका पुस्तक डिलीट नहीं हुआ!"

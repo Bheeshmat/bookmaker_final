@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       redirect_to book_path(@book)
-      flash[:success] = "The book was created successfully."
+      flash[:success] = I18n.t('flash_messages.books.creation_success')
     else
       render 'new'
     end
@@ -27,10 +27,10 @@ class BooksController < ApplicationController
     if params[:title_confirmation].downcase == @book.title.downcase
       @book.delete
       redirect_to books_path
-      flash[:success] = "The book #{ @book.title } is successfully deleted."
+      flash[:success] = I18n.t('flash_messages.books.deletion_success')
     else
-      redirect_to books_path(@book)
-      flash[:danger] = "The book #{ @book.title } is not deleted."
+      redirect_to book_path(@book)
+      flash[:danger] = I18n.t('flash_messages.books.deletion_failure')
     end
   end
 
