@@ -20,6 +20,8 @@ before_action :get_book, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @chapters = @book.chapters.all
+    @new_chapter = @book.chapters.new
   end
 
   def edit
