@@ -5,3 +5,5 @@ en:
       creation_failure: "Sorry, could not create the book"
       deletion_success: "The book is successfully deleted."
       deletion_failure: "The book is was not deleted successfully."
+      updation_success: "The book was successfully updated."
+      updation_failure: "Sorry! Could not update your book successfully."

@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   scope "/:locale", locale: /en|hn/ do
-    resources :books, only: [:index, :new, :create, :show, :destroy]
+    resources :books, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
+      resources :chapters, only: [:new]
+    end
   end
   # Example resource route with options:
   #   resources :products do

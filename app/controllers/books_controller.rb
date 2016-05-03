@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-# before_action get_book only: [:show, :destroy]
+before_action :get_book, only: [:show, :edit, :update, :destroy]
+
   def index
     @books = Book.all
   end
@@ -19,11 +20,22 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update_attributes(book_params)
+      redirect_to book_path(@book)
+      flash[:success] = I18n.t('flash_messages.books.updation_success')
+    else
+      redirect_to book_path(@book)
+      flash[:danger] = I18n.t('flash_messages.books.updation_failure')
+    end
   end
 
   def destroy
-    @book = Book.find(params[:id])
     if params[:title_confirmation].downcase == @book.title.downcase
       @book.delete
       redirect_to books_path

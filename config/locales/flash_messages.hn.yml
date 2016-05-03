@@ -5,3 +5,5 @@ hn:
       creation_failure: "आपका पुस्तक नहीं बना!"
       deletion_success: "आपका पुस्तक डिलीट हुआ!"
       deletion_failure: "आपका पुस्तक डिलीट नहीं हुआ!"
+      updation_success: "आपका पुस्तक  अपडेट हुआ!"
+      updation_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
