@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'books/index'
+  # get 'books/index'
 
   # get 'home/land'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'home#land'
+  # You can have the root of your site routed with "root"
+  get '/:locale' => 'home#land'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :books, only: [:index, :new, :create, :show, :destroy]
-
+  scope "/:locale", locale: /en|hn/ do
+    resources :books do
+      resources :chapters, only: [:create]
+    end
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do

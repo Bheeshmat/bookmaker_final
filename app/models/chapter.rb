@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: books
+# Table name: chapters
 #
 #  id         :integer          not null, primary key
 #  title      :string
 #  notes      :text
+#  book_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Book < ActiveRecord::Base
-  has_many :chapters
+class Chapter < ActiveRecord::Base
+  belongs_to :book
   validates :title, presence: true
 end

@@ -1,3 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+@ChapterUtils =
+  hideNewChapterForm: ->
+    $("#new-chapter-form").hide()
+    $("#new-chapter-form-trigger").show()
+  bindNewChapterCancelLink: ->
+    $("#cancel-new-chapter-form-trigger").click ->
+      ChapterUtils.hideNewChapterForm()
+$ ->
+  $("#new-chapter-form").hide()
+  $("#new-chapter-form-trigger").click ->
+    $("#new-chapter-form").show()
+    $(@).hide()
+  ChapterUtils.bindNewChapterCancelLink()
