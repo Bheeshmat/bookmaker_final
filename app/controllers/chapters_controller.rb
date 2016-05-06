@@ -1,9 +1,21 @@
 class ChaptersController < ApplicationController
-before_action :fetch_book, only: [:create]
+before_action :fetch_book
+before_action :fetch_chapter, only: [:edit, :update, :destroy]
 
   def create
     @chapter = @book.chapters.new(chapter_params)
     @chapter_saved = !!@chapter.save
+  end
+
+  def edit
+  end
+
+  def update
+    @chapter.reload unless @chapter.update_attributes(chapter_params)
+  end
+
+  def destroy
+    @chapter.destroy
   end
 
 private
@@ -14,6 +26,10 @@ private
 
   def fetch_book
     @book = Book.find(params[:book_id])
+  end
+
+  def fetch_chapter
+    @chapter = @book.chapters.find(params[:id])
   end
 
 end
