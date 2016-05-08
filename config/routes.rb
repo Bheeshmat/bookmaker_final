@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   scope "/:locale", locale: /en|hn/ do
     resources :books do
       resources :chapters, only: [:create, :edit, :update, :destroy] do
-        resources :sections, only: [:create, :destroy]
+        resources :sections, only: [:create, :show, :update, :destroy]
       end
     end
   end
