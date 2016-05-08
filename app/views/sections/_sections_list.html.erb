@@ -1,0 +1,22 @@
+
+
+<!-- Add Section Modal -->
+<div class="modal fade" id="add-section-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Section</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(book_path(@book), method: :delete, class: "form-inline") do %>
+        <div class="form-group">
+          <%= label_tag :title_confirmation, "Enter Book Name:" %>
+          <%= text_field_tag :title_confirmation, nil, class: "form-control" %>
+        </div>
+        <%= submit_tag "Delete", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

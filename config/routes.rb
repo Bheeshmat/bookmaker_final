@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   # get 'books/index'
-
   # get 'home/land'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'home#land'
@@ -18,7 +16,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   scope "/:locale", locale: /en|hn/ do
     resources :books do
-      resources :chapters, only: [:create, :edit, :update, :destroy]
+      resources :chapters, only: [:create, :edit, :update, :destroy] do
+        resources :sections, only: [:create, :destroy]
+      end
     end
   end
   # Example resource route with options:
