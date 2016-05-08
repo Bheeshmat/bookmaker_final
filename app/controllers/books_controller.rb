@@ -20,8 +20,12 @@ before_action :get_book, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-    @chapters = @book.chapters.all
+    @chapters = @book.chapters.includes(:sections).all
     @new_chapter = @book.chapters.new
+    @new_sections = {}
+    @chapters.each do |chapter|
+      @new_sections[chapter.id] = chapter.sections.new
+    end
   end
 
   def edit
@@ -38,7 +42,7 @@ before_action :get_book, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-    if params[:title_confirmation].downcase == @book.title.downcase
+    if (params[:title_confirmation]).downcase == @book.title.downcase
       @book.delete
       redirect_to books_path
       flash[:success] = I18n.t('flash_messages.books.deletion_success')
