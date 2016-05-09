@@ -1,11 +1,25 @@
 #book{
+  #sidebar{
+  }
   #chapters-list{
     border-right: 1px solid $dark-color;
     padding-right: 1em;
+    .sortable-placeholder{
+      background-color: #7fc4f6;
+      height: 2rem;
+    }
+    a{
+      color: $grey-color;
+    }
     .chapter{
+      i.fa-bars{
+        cursor: move;
+        padding: 0.3em 0;
+        font-size: 1.1em;
+        margin-right: 0.3rem;
+      }
       a.chapter-title{
         margin-right: 1em;
-        display: block;
         .fa-caret-right{
           display: inline-block;
         }
@@ -26,7 +40,9 @@
       .sections{
         margin-left: 1em;
         display: none;
+        margin-left: 3rem;
         .section{
+          padding-bottom: 0.3rem;
           a.section-title{
             margin-right: 1em;
             display: block;

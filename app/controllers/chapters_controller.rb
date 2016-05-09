@@ -5,6 +5,7 @@ before_action :fetch_chapter, only: [:edit, :update, :destroy]
   def create
     @chapter = @book.chapters.new(chapter_params)
     @chapter_saved = !!@chapter.save
+    @new_sections = { @chapter.id => @chapter.sections.new }
   end
 
   def edit
@@ -16,6 +17,10 @@ before_action :fetch_chapter, only: [:edit, :update, :destroy]
 
   def destroy
     @chapter.destroy
+  end
+
+  def sort
+    debugger
   end
 
 private
