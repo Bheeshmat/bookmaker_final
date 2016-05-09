@@ -7,5 +7,8 @@ en:
       deletion_failure: "The book is was not deleted successfully."
       updation_success: "The book was successfully updated."
       updation_failure: "Sorry! Could not update your book successfully."
+    chapters:
+      deletion_success: "The chapter was successfully deleted"
+      deletion_failure: "The chapter could not be deleted as it contains sections"
     sections:
       creation_failure: "Section creation failed!"

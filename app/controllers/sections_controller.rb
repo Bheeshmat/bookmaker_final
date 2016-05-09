@@ -3,8 +3,8 @@ before_action :fetch_chapter
 before_action :fetch_section, only: [:show, :update]
 
   def create
-    @save_success = @section.save
     @section = @chapter.sections.new(section_params)
+    @save_success = @section.save
   end
 
   def show

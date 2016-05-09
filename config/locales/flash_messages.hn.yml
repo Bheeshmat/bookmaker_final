@@ -7,5 +7,8 @@ hn:
       deletion_failure: "आपका पुस्तक डिलीट नहीं हुआ!"
       updation_success: "आपका पुस्तक  अपडेट हुआ!"
       updation_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
+    chapters:
+      deletion_success: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
+      deletion_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
     sections:
       creation_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
