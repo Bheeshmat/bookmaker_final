@@ -33,8 +33,12 @@ before_action :get_book, only: [:show, :edit, :update, :destroy]
 
   def update
     if @book.update_attributes(book_params)
-      redirect_to book_path(@book)
-      flash[:success] = I18n.t('flash_messages.books.updation_success')
+      if params[:book][:sorted_chapter_ids]
+        render nothing: true
+      else
+        flash[:success] = I18n.t('flash_messages.books.updation_success')
+        redirect_to book_path(@book)
+      end
     else
       redirect_to book_path(@book)
       flash[:danger] = I18n.t('flash_messages.books.updation_failure')
@@ -55,7 +59,7 @@ before_action :get_book, only: [:show, :edit, :update, :destroy]
 private
 
   def book_params
-    params.require(:book).permit(:title, :notes)
+    params.require(:book).permit(:title, :notes, :sorted_chapter_ids)
   end
 
   def get_book
