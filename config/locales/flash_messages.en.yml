@@ -12,3 +12,5 @@ en:
       deletion_failure: "The chapter could not be deleted as it contains sections"
     sections:
       creation_failure: "Section creation failed!"
+      deletion_success: "The section was successfully deleted"
+      deletion_failure: "Sorry, could not delete the book"

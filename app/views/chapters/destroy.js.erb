@@ -1,8 +1,5 @@
+<%= refresh_flash_message %>
 <% if @destroy_failed %>
-  $('header .alert').remove();
-  $('header').append('<%= j flash_messages_tag %>');
 <% else %>
   $('#<%= dom_id @chapter %>').remove();
-  $('header .alert').remove();
-  $('header').append('<%= j flash_messages_tag %>');
 <% end %>

@@ -12,3 +12,5 @@ hn:
       deletion_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
     sections:
       creation_failure: "क्षमा करे! आपका पुस्तक अपडेट नहीं हुआ!"
+      deletion_success: "The section was successfully deleted"
+      deletion_failure: "Sorry, could not delete the book"
