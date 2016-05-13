@@ -9,6 +9,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'devise'
 
 gem 'simple_form'
 gem 'bootstrap-sass'
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'byebug'
   gem 'faker'
   gem 'thin'
+  gem "letter_opener"
 end
 
 group :development do

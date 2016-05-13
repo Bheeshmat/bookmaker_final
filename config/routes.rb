@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # get 'home/land'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root 'home#land'
+  authenticated :user do
+    root to: 'books#index', as: :authenticated_root
+  end
+  root to: 'home#land'
   # You can have the root of your site routed with "root"
   get '/:locale' => 'home#land'
 
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   scope "/:locale", locale: /en|hn/ do
+    devise_for :users
     resources :books do
       resources :chapters, only: [:create, :edit, :update, :destroy] do
         resources :sections, only: [:create, :show, :update, :destroy]
