@@ -1,1 +1,5 @@
-$('#<%= dom_id @chapter %>').remove();
+<%= refresh_flash_message %>
+<% if @destroy_failed %>
+<% else %>
+  $('#<%= dom_id @chapter %>').remove();
+<% end %>

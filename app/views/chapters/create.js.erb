@@ -1,8 +1,8 @@
 <% if @chapter_saved %>
-  ChapterUtils.hideNewChapterForm()
+  ChapterUtils.hideNewChapterForm();
   $("#new-chapter-form")[0].reset();
   $("#chapters-list").append('<%= j render(@chapter) %>');
 <% else %>
   $("#new-chapter-form").replaceWith('<%= j render(partial: "chapters/form", locals: {chapter: @chapter}) %>');
-  ChapterUtils.bindNewChapterCancelLink()
+  ChapterUtils.bindNewChapterCancelLink();
 <% end %>

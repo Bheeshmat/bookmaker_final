@@ -1,4 +1,4 @@
-<section id="book" class="row">
+<section id="book" class="row" data-book-id="<%= @book.id %>">
   <div id="book-content" class="col-md-9 col-md-push-3">
     <%= link_to 'Delete Book', '#', class: "btn btn-danger pull-right", data: { toggle: "modal", target: "#delete-confirmation-modal"} %>
     <%= link_to 'Edit Book', edit_book_path(@book), class: "btn btn-primary pull-right" %>
@@ -6,6 +6,9 @@
     <p>
       <%= @book.notes %>
     </p>
+    <div id="section-content">
+
+    </div>
   </div>
   <div id="sidebar" class="col-md-3 col-md-pull-9">
     <div id="chapters-list">

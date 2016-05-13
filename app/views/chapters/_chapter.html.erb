@@ -1,7 +1,8 @@
 <div id="<%= dom_id chapter %>" class="chapter clearfix">
   <%= link_to fa_icon("trash"), book_chapter_path(chapter.book, chapter), method: :delete, remote: true, class: "text-danger chapter-delete", data: { confirm: "Are you sure you want to delete the chapter titled \"#{ chapter.title }\"?"} %>
   <%= link_to fa_icon("pencil"), edit_book_chapter_path(chapter.book, chapter), remote: true, class: "chapter-edit" %>
-  <%= link_to '#', remote: true, class: "chapter-title" do %>
+  <%= fa_icon 'bars' %>
+  <%= link_to '#', class: "chapter-title" do %>
     <%= fa_icon 'caret-right' %>
     <%= fa_icon 'caret-down' %>
     <%= chapter.title %>
@@ -26,7 +27,6 @@
         <div class="alert alert-danger hidden" role="alert">
           <%= t 'flash_messages.sections.creation_failure'  %>
         </div>
-        <% debugger %>
         <%= simple_form_for [chapter.book, chapter, @new_sections[chapter.id]], remote: true do |f| %>
           <%= f.input :title %>
           <%= f.input :notes %>
